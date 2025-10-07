@@ -1,0 +1,195 @@
+<!<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Профориентатор — профессии с высшим образованием</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(180deg, #e9f1ff, #ffffff);
+      color: #333;
+    }
+    header {
+      text-align: center;
+      background: #0056d2;
+      color: white;
+      padding: 30px 20px;
+    }
+    h1 { font-size: 26px; margin-bottom: 10px; }
+    nav {
+      background: #003d99;
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    section {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+    h2 {
+      color: #0056d2;
+      margin-top: 0;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+    .card {
+      background: #f5f9ff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .card:hover { transform: scale(1.03); }
+    .card img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    button {
+      background: #0056d2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    button:hover {
+      background: #0042a3;
+    }
+    footer {
+      text-align: center;
+      background: #0056d2;
+      color: white;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Профориентатор</h1>
+    <p>Выбор профессии с высшим образованием</p>
+  </header>
+
+  <nav>
+    <a href="#about">О проекте</a>
+    <a href="#test">Тест</a>
+    <a href="#professions">Профессии</a>
+    <a href="#universities">Вузы</a>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>О проекте</h2>
+      <p>Этот сайт создан как индивидуальный проект ученика 10 класса. Его цель — помочь школьникам определиться с выбором профессии, требующей высшего образования, и узнать, где можно получить нужную специальность.</p>
+    </section>
+
+    <section id="test">
+      <h2>Тест по профориентации</h2>
+      <p>Ответь на несколько вопросов и узнай, какие направления тебе подходят!</p>
+
+      <p><b>1.</b> Что тебе больше по душе?</p>
+      <label><input type="radio" name="q1" value="it">Работа с компьютерами и технологиями</label><br>
+      <label><input type="radio" name="q1" value="med">Помогать людям, заботиться</label><br>
+      <label><input type="radio" name="q1" value="design">Создавать и придумывать новое</label><br><br>
+
+      <p><b>2.</b> Что тебе ближе?</p>
+      <label><input type="radio" name="q2" value="it">Логика, анализ, точность</label><br>
+      <label><input type="radio" name="q2" value="med">Общение, поддержка</label><br>
+      <label><input type="radio" name="q2" value="design">Красота, творчество, самовыражение</label><br><br>
+
+      <button onclick="getResult()">Узнать результат</button>
+      <p id="result" style="margin-top: 10px; font-weight: bold;"></p>
+    </section>
+
+    <section id="professions">
+      <h2>Популярные профессии с высшим образованием</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="IT">
+          <h3>Программист</h3>
+          <p>Создаёт приложения и сайты. Нужно техническое образование (ИТ, математика).</p>
+        </div>
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3063/3063822.png" alt="Врач">
+          <h3>Врач</h3>
+          <p>Лечит людей, требует медицинского образования и практики.</p>
+        </div>
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="Архитектор">
+          <h3>Архитектор</h3>
+          <p>Проектирует здания, совмещая творчество и инженерные расчёты.</p>
+        </div>
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3141/3141153.png" alt="Юрист">
+          <h3>Юрист</h3>
+          <p>Разбирается в законах, защищает интересы людей и компаний.</p>
+        </div>
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" alt="Педагог">
+          <h3>Педагог</h3>
+          <p>Обучает и воспитывает новое поколение, требует педагогического образования.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="universities">
+      <h2>Где можно получить высшее образование</h2>
+      <ul>
+        <li>МГУ имени М. В. Ломоносова</li>
+        <li>СПбГУ — Санкт-Петербургский государственный университет</li>
+        <li>МФТИ — Московский физико-технический институт</li>
+        <li>НИУ ВШЭ — Высшая школа экономики</li>
+        <li>РАНХиГС — Российская академия народного хозяйства и госслужбы</li>
+        <li>УрФУ — Уральский федеральный университет</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 | Индивидуальный проект ученика 10 класса. Все права защищены.
+  </footer>
+
+  <script>
+    function getResult() {
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      if (!q1 || !q2) {
+        document.getElementById("result").innerText = "Пожалуйста, ответь на все вопросы.";
+        return;
+      }
+      let res = "";
+      if (q1.value === "it" || q2.value === "it")
+        res = "Тебе подойдут ИТ-профессии: программист, аналитик, инженер.";
+      else if (q1.value === "med" || q2.value === "med")
+        res = "Тебе подойдут профессии: врач, педагог, психолог.";
+      else if (q1.value === "design" || q2.value === "design")
+        res = "Тебе подойдут творческие профессии: дизайнер, архитектор, журналист.";
+      document.getElementById("result").innerText = res;
+    }
+  </script>
+</body>
+</html>
